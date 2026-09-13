@@ -48,3 +48,16 @@ solution_presenter = Agent(
         "4. Make the solution easy to understand for someone learning math"
     )
 )
+
+complex_problem = """
+A rectangular garden is 12 meters long and 8 meters wide.
+How much fencing is needed to go around the perimeter?
+Also, if grass seed is needed at a rate of 0.25 kg per square meter,
+how much grass seed is required for the entire garden?
+"""
+
+analysis_messages = [{"role": "user", "content": complex_problem}]
+
+analysis_messages, analysis_output = problem_analyzer.run(analysis_messages)
+
+print(analysis_output)
