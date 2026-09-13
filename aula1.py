@@ -61,3 +61,17 @@ analysis_messages = [{"role": "user", "content": complex_problem}]
 analysis_messages, analysis_output = problem_analyzer.run(analysis_messages)
 
 print(analysis_output)
+
+calculation_messages = [
+    {
+        "role": "user",
+        "content": (
+            "Execute this calculation plan: "
+            f"{analysis_output}"
+        ),
+    }
+]
+
+calculation_messages, calculation_output = calculator_agent.run(calculation_messages)
+
+print(calculation_output)
